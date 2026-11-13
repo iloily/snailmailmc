@@ -1,10 +1,10 @@
 {% assign p = include.post %}{% assign cat = p.category | default: "Update" %}
-<a class="card postcard" href="{{ p.url }}">
-  <img class="postcard-img" src="{{ p.image | default: '/assets/img/island-900.webp' }}" alt="" width="900" height="506" loading="lazy">
-  <span class="postmark">{{ p.date | date: "%b" | upcase }}<br>{{ p.date | date: "%-d" }}</span>
-  <div class="postcard-body">
-    <div class="post-meta"><span class="stamp stamp-{{ cat | slugify }}">{{ cat }}</span><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%B %-d, %Y" }}</time></div>
+<a class="post-card" href="{{ p.url }}">
+  <img src="{{ p.image | default: '/assets/img/island-900.webp' }}" alt="" width="900" height="506" loading="lazy">
+  <div class="post-body">
+    <p class="post-meta"><span class="cat cat-{{ cat | slugify }}">{{ cat }}</span> · <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%B %-d, %Y" }}</time></p>
     <h3>{{ p.title }}</h3>
     <p>{{ p.description | default: p.excerpt | strip_html | truncate: 160 }}</p>
+    <span class="read-more">Read more</span>
   </div>
 </a>
