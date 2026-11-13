@@ -71,7 +71,7 @@
 
   /* Season from the real calendar (the island follows real time) */
   var m = new Date().getMonth();
-  var season = m < 2 || m === 11 ? 'Winter' : m < 5 ? 'Spring' : m < 8 ? 'Summer' : 'Autumn';
+  var season = m < 2 || m === 11 ? 'winter' : m < 5 ? 'spring' : m < 8 ? 'summer' : 'autumn';
   document.querySelectorAll('[data-season]').forEach(function (el) { el.textContent = season; });
 
   /* Server status */
@@ -79,10 +79,10 @@
   function setStatus(state, data) {
     dots.forEach(function (d) { d.dataset.state = state; });
     document.querySelectorAll('[data-status-text]').forEach(function (el) {
-      el.textContent = state === 'online' ? 'Online' : state === 'offline' ? 'Offline' : 'Checking';
+      el.textContent = state === 'online' ? 'online' : state === 'offline' ? 'offline' : 'checking';
     });
     document.querySelectorAll('[data-players]').forEach(function (el) {
-      el.textContent = data && data.players ? data.players.online + ' / ' + data.players.max : '–';
+      el.textContent = data && data.players ? data.players.online + ' of ' + data.players.max : '–';
     });
   }
   function checkStatus() {
@@ -103,8 +103,8 @@
       .then(function (d) {
         if (!d.approximate_member_count) return;
         dEls.forEach(function (el) {
-          el.innerHTML = '<strong>' + d.approximate_member_count + '</strong> islanders · <strong>' +
-            d.approximate_presence_count + '</strong> online now';
+          el.innerHTML = '<strong>' + d.approximate_member_count + ' islanders</strong> are there already, and <strong>' +
+            d.approximate_presence_count + '</strong> are online now.';
           el.hidden = false;
         });
       }).catch(function () {});

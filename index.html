@@ -4,80 +4,74 @@ title: SnailMail
 description: A cozy island town Minecraft server for Java and Bedrock. Catch bugs, fill the museum, live through real-time seasons and send letters to your neighbors.
 slug: home
 ---
-<div class="hero-art">
+<section class="hero" aria-label="SnailMail">
   <picture>
     <source media="(max-width: 720px)" srcset="/assets/img/island-900.webp">
-    <img src="/assets/img/island-1672.webp" alt="A pastel pixel-art island town at sunset, with the SnailMail snail delivering a letter outside the post office" width="1672" height="941" fetchpriority="high">
+    <img src="/assets/img/island-1672.webp" alt="A pastel island town at sunset. The SnailMail snail, in a mail carrier's cap, hands a letter over at the post office." width="1672" height="941" fetchpriority="high">
   </picture>
+  <img class="hero-logo" src="/assets/img/logo.webp" alt="SnailMail" width="1100" height="344">
+  <div class="label">
+    <div class="stamp"><img src="/assets/img/snail.webp" alt="" width="64" height="64"></div>
+    <p class="label-to">Send yourself to</p>
+    <p class="label-address">{{ site.mc.ip }}</p>
+    <p class="label-port">On Bedrock, add port <strong>{{ site.mc.bedrock_port }}</strong></p>
+    <div class="label-actions">
+      <button class="btn btn-primary btn-sm" type="button" data-copy="{{ site.mc.ip }}">Copy address</button>
+      <button class="btn btn-quiet btn-sm" type="button" data-copy="{{ site.mc.bedrock_port }}">Copy port</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap intro-grid">
+  <div class="intro-copy">
+    <h1>A slow, cozy island town for Java and Bedrock</h1>
+    <p class="lead">Catch bugs, fill the museum, live through real-time seasons and write letters to your neighbors. It's Animal Crossing and Tomodachi Life, in Minecraft.</p>
+    <p class="status"><span class="dot" data-status-dot></span><span>The island is <strong data-status-text>checking</strong>. <strong data-players>–</strong> islanders are on, and it's <strong data-season>–</strong> there right now.</span></p>
+  </div>
+  <div class="intro-side">
+    <h3>Getting in</h3>
+    <p>SnailMail is whitelist only. Join the Discord, ask a staff member to add you, then follow the steps for your edition.</p>
+    <div class="row"><a class="btn btn-primary" href="{{ site.discord }}" rel="noopener">Join the Discord</a><a class="btn btn-quiet" href="/join/">How to join</a></div>
+  </div>
 </div>
-<section class="intro">
-  <div class="wrap intro-grid">
-    <div class="intro-copy">
-      <h1>A cozy island town for Java and Bedrock</h1>
-      <p class="lead">Catch bugs, fill the museum, live through real-time seasons and send letters to your neighbors. Opening soon.</p>
-      <div class="status-line" aria-live="polite">
-        <span class="item"><span class="dot" data-status-dot></span><strong data-status-text>Checking</strong></span><span class="sep"></span>
-        <span class="item"><strong data-players>–</strong>&nbsp;islanders on</span><span class="sep"></span>
-        <span class="item"><strong data-season>–</strong>&nbsp;on the island</span>
-      </div>
-    </div>
-    <div class="intro-actions">
-      <div class="intro-buttons">
-        <button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy IP: {{ site.mc.ip }}</button>
-        <a class="btn btn-outline" href="{{ site.discord }}" rel="noopener">Join the Discord</a>
-      </div>
-      <p class="intro-note">On Bedrock? Use port <button class="chip-copy" type="button" data-copy="{{ site.mc.bedrock_port }}">{{ site.mc.bedrock_port }}</button> · <a href="/join/">How to join</a></p>
+
+<section class="section">
+  <div class="wrap stack">
+    <h2>On the island when it opens</h2>
+    <div class="features">
+      <div class="feature"><h3>The town</h3><p>A little seaside town to settle into and make home with your neighbors.</p></div>
+      <div class="feature"><h3>Fishing</h3><p>Cast a line off the pier and see what's biting this season.</p></div>
+      <div class="feature"><h3>Bug catching</h3><p>Butterflies, beetles and rare finds that only come out at the right time of year.</p></div>
+      <div class="feature"><h3>The museum</h3><p>Donate what you catch and help everyone fill every hall.</p></div>
+      <div class="feature"><h3>Real-time seasons</h3><p>The island follows the real calendar, so spring there is spring for you too.</p></div>
+      <div class="feature"><h3>The post office</h3><p>Write letters, send gifts and leave notes for friends, then check the news board.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="head-row">
-      <div><h2>SnailMail News</h2><p class="muted">Updates, events and wave announcements.</p></div>
-      <a class="more" href="/news/">View all posts</a>
-    </div>
-    <div class="posts">
-      {% for post in site.posts limit: 3 %}{% include postcard.html post=post %}{% endfor %}
-    </div>
+    <div class="head-row"><h2>Latest news</h2><a href="/news/">All news</a></div>
+    {% for post in site.posts limit: 1 %}{% include postcard.html post=post %}{% endfor %}
+    {% assign rest = site.posts | slice: 1, 3 %}{% include post-list.html posts=rest %}
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap split">
-    <div class="split-intro">
-      <h2>Everything on the island</h2>
-      <p class="lead">What's waiting for you in Wave 1, from your first fish to your first letter.</p>
-      <a class="btn btn-primary btn-sm" href="/about/">About the island</a>
-    </div>
-    <div class="link-list">
-      <a class="link-row" href="/about/#town"><strong>Island town</strong><span>A seaside town to settle into</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="link-row" href="/about/#fishing"><strong>Fishing</strong><span>Cast off the pier, season by season</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="link-row" href="/about/#bugs"><strong>Bug catching</strong><span>Butterflies, beetles and rare finds</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="link-row" href="/about/#museum"><strong>The museum</strong><span>Donate catches and fill every hall</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="link-row" href="/about/#seasons"><strong>Real-time seasons</strong><span>The island follows the real calendar</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-      <a class="link-row" href="/about/#post"><strong>Post office</strong><span>Letters, gifts and little notes</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="head-row"><div><h2>The island grows in waves</h2><p class="muted">New things arrive one wave at a time.</p></div></div>
+  <div class="wrap stack">
+    <h2>The island grows in waves</h2>
     {% include route.html %}
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="discord-band">
-      <div class="copy">
-        <h2>Come hang out with us on Discord</h2>
-        <p>Whitelist requests, sneak peeks of the island, events and the people who make SnailMail feel like home.</p>
-        <p class="discord-count" data-discord-count hidden></p>
-        <a class="btn btn-light" href="{{ site.discord }}" rel="noopener">Join our Discord</a>
+    <div class="discord">
+      <div>
+        <h2>Come hang out on Discord</h2>
+        <p>It's where whitelist requests, sneak peeks of the island and event news happen first. <span class="discord-count" data-discord-count hidden></span></p>
       </div>
-      <img src="/assets/img/island-900.webp" alt="" width="900" height="506" loading="lazy">
+      <a class="btn btn-light" href="{{ site.discord }}" rel="noopener">Join discord.gg/snailmail</a>
     </div>
   </div>
 </section>

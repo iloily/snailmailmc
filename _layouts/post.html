@@ -5,7 +5,7 @@ layout: default
 <article class="section">
   <div class="narrow prose">
     <a class="back" href="/news/">&larr; All news</a>
-    <p class="post-meta"><span class="cat cat-{{ cat | slugify }}">{{ cat }}</span> · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+    <p class="post-date">{{ cat }}, <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
     {% if page.image %}<img src="{{ page.image }}" alt="" width="900" height="506">{% endif %}
