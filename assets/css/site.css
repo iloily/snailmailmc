@@ -307,3 +307,10 @@ main > .section:last-child { padding-bottom: 0; }
 .brand img { height: 44px; }
 .feature .art .sprite { width: 112px; height: 112px; }
 @media (max-width: 640px) { .brand img { height: 36px; } .feature .art .sprite { width: 80px; height: 80px; } }
+/* Traced logo */
+.brand img { height: 54px; }
+.polaroid .shot img { width: 84%; }
+.lost .polaroid .shot img { width: 84%; }
+.px-snail { width: 200px; height: auto; }
+.footer-brand .brand img { height: 48px; }
+@media (max-width: 640px) { .brand img { height: 44px; } }
