@@ -293,3 +293,17 @@ main > .section:last-child { padding-bottom: 0; }
   .steps li > span + span { grid-column: 1 / -1; }
   .addr code { font-size: 14px; }
 }
+/* Hand-drawn pixel art */
+.brand img { width: auto; height: 38px; border-radius: 0; box-shadow: none; image-rendering: pixelated; }
+.feature .art .sprite { width: 96px; height: 96px; }
+.cozy-grid .ico { width: 44px; height: 44px; }
+.cozy-grid .ico img { width: 28px; height: 28px; }
+.polaroid .shot img { width: auto; height: 82%; }
+.px-snail { width: 112px; height: 112px; }
+.lost .polaroid .shot img { height: 70%; }
+@media (max-width: 640px) { .brand img { height: 32px; } .feature .art .sprite { width: 72px; height: 72px; } }
+.polaroid .shot img { width: 40%; height: auto; }
+.lost .polaroid .shot img { width: 46%; }
+.brand img { height: 44px; }
+.feature .art .sprite { width: 112px; height: 112px; }
+@media (max-width: 640px) { .brand img { height: 36px; } .feature .art .sprite { width: 80px; height: 80px; } }
