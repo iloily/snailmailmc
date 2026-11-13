@@ -1,0 +1,17 @@
+name: SnailMail
+version: '${version}'
+main: com.snailmailmc.plugin.SnailMailPlugin
+api-version: '26.3'
+description: Town features for the SnailMail server.
+author: SnailMail team
+website: https://snailmailmc.com
+softdepend: [floodgate]
+commands:
+  snailmail:
+    description: SnailMail plugin info and admin tools.
+    usage: /snailmail [reload]
+    aliases: [sm]
+permissions:
+  snailmail.admin:
+    description: Reload the plugin and use admin tools.
+    default: op

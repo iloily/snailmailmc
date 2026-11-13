@@ -1,0 +1,18 @@
+# SnailMail plugin settings.
+
+currency:
+  # Name of the town currency. Placeholder until the team picks one.
+  singular: "Shell"
+  plural: "Shells"
+  # Coins new players start with.
+  starting-balance: 0
+
+seasons:
+  # Seasons follow the real calendar in this time zone.
+  timezone: "America/New_York"
+  # "north" or "south", decides which months are which season.
+  hemisphere: "north"
+
+mail:
+  # Letters arrive at this local hour the morning after they are sent.
+  delivery-hour: 6
