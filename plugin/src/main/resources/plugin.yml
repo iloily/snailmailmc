@@ -1,0 +1,35 @@
+name: SnailMail
+version: '${version}'
+main: com.snailmailmc.plugin.SnailMailPlugin
+api-version: '26.3'
+description: Town features for the SnailMail server.
+author: SnailMail team
+website: https://snailmailmc.com
+softdepend: [floodgate, Vault]
+commands:
+  snailmail:
+    description: SnailMail plugin info and admin tools.
+    usage: /snailmail [reload]
+    aliases: [sm]
+  shells:
+    description: Check Shells, or give and take them as an admin.
+    usage: /shells [player] | /shells give|take|set <player> <amount>
+    aliases: [balance, bal]
+  pay:
+    description: Pay another player in Shells.
+    usage: /pay <player> <amount>
+  mail:
+    description: Open your mailbox, or post a letter or gift.
+    usage: /mail | /mail send <player> <letter> | /mail gift <player> [note]
+    aliases: [mailbox, post]
+  news:
+    description: Read the town news board, or post to it as staff.
+    usage: /news | /news post <title> | <text> | /news remove <id> | /news bind | /news unbind
+    aliases: [board]
+permissions:
+  snailmail.admin:
+    description: Reload the plugin and give, take or set Shells.
+    default: op
+  snailmail.news:
+    description: Post and remove news, and choose which blocks open the news board.
+    default: op

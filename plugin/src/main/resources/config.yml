@@ -1,0 +1,22 @@
+# SnailMail plugin settings.
+
+currency:
+  # Name of the town currency.
+  singular: "Shell"
+  plural: "Shells"
+  # Shells new players start with.
+  starting-balance: 0
+
+seasons:
+  # Town time zone. Mail delivery (and later the seasons) follow this clock.
+  timezone: "America/New_York"
+  # "north" or "south", decides which months are which season.
+  hemisphere: "north"
+
+mail:
+  # Letters arrive at this hour (0-23, town time) the morning after they're sent.
+  delivery-hour: 6
+  # Shells it costs to post a letter. 0 means free.
+  postage: 0
+  # How many letters one player can have on the way at once.
+  max-in-transit: 10
