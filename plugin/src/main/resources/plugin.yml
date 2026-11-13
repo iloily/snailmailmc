@@ -5,13 +5,24 @@ api-version: '26.3'
 description: Town features for the SnailMail server.
 author: SnailMail team
 website: https://snailmailmc.com
-softdepend: [floodgate]
+softdepend: [floodgate, Vault]
 commands:
   snailmail:
     description: SnailMail plugin info and admin tools.
     usage: /snailmail [reload]
     aliases: [sm]
+  shells:
+    description: Check Shells, or give and take them as an admin.
+    usage: /shells [player] | /shells give|take|set <player> <amount>
+    aliases: [balance, bal]
+  pay:
+    description: Pay another player in Shells.
+    usage: /pay <player> <amount>
+  mail:
+    description: Open your mailbox, or post a letter or gift.
+    usage: /mail | /mail send <player> <letter> | /mail gift <player> [note]
+    aliases: [mailbox, post]
 permissions:
   snailmail.admin:
-    description: Reload the plugin and use admin tools.
+    description: Reload the plugin and give, take or set Shells.
     default: op
