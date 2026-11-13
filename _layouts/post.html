@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{% assign cat = page.category | default: "Update" %}
+<article>
+  <section class="page-hero">
+    <div class="narrow" style="display:grid;gap:14px">
+      <div class="post-meta"><span class="stamp stamp-{{ cat | slugify }}">{{ cat }}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    </div>
+  </section>
+  <section class="section">
+    <div class="narrow prose">
+      {% if page.image %}<img src="{{ page.image }}" alt="" width="900" height="506">{% endif %}
+      {{ content }}
+      <p><a href="/news/">&larr; All news</a></p>
+    </div>
+  </section>
+</article>

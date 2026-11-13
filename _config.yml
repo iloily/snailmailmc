@@ -1,0 +1,37 @@
+title: SnailMail
+description: A cozy island town Minecraft server for Java and Bedrock, inspired by Animal Crossing and Tomodachi Life.
+url: https://snailmailmc.com
+baseurl: ""
+lang: en
+image: /assets/img/og.jpg
+logo: /assets/img/logo-square.webp
+
+mc:
+  ip: play.snailmailmc.com
+  bedrock_port: 8094
+  version: "26.3"
+discord: https://discord.gg/snailmail
+discord_code: snailmail
+
+permalink: /news/:year/:month/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+
+# The plugin and server config folders share this repo but are not part of the website.
+exclude:
+  - plugin/
+  - server-config/
+  - README.md
+  - NEWS-HOW-TO.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

@@ -1,0 +1,18 @@
+{% assign nav = "Home|/,How to join|/join/,About|/about/,Rules|/rules/,News|/news/,Team|/team/" | split: "," %}
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/" aria-label="SnailMail home"><img src="/assets/img/logo-sm.webp" alt="SnailMail" width="148" height="46"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      {% for item in nav %}{% assign p = item | split: "|" %}
+      <a href="{{ p[1] }}"{% if page.url == p[1] or page.url contains p[1] and p[1] != "/" %} aria-current="page"{% endif %}>{{ p[0] }}</a>
+      {% endfor %}
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-discord btn-sm" href="{{ site.discord }}" rel="noopener">Discord</a>
+      <button class="ip-pill" type="button" data-copy="{{ site.mc.ip }}" aria-label="Copy server address {{ site.mc.ip }}">
+        <span class="dot" data-status-dot></span><span class="ip-text">{{ site.mc.ip }}</span>
+      </button>
+      <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>

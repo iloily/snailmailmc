@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <img class="divider" src="/assets/img/divider.webp" alt="" width="1100" height="139" loading="lazy">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="/img/server-icon.png" alt="" width="48" height="48" class="pixel">
+      <div>
+        <p class="footer-name">SnailMail</p>
+        <p>A cozy island town for Java and Bedrock.</p>
+        <button class="linklike" type="button" data-copy="{{ site.mc.ip }}">{{ site.mc.ip }}</button>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <p class="footer-head">Island</p>
+        <a href="/join/">How to join</a><a href="/about/">About</a><a href="/rules/">Rules</a>
+      </div>
+      <div>
+        <p class="footer-head">Community</p>
+        <a href="/news/">News</a><a href="/team/">Team</a><a href="{{ site.discord }}" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>&copy; {{ site.time | date: "%Y" }} SnailMail</p>
+    <p>Not affiliated with Mojang AB or Microsoft.</p>
+  </div>
+</footer>

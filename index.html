@@ -1,5 +1,103 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SnailMail</title><link rel="icon" href="img/server-icon.png">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F9CDAD;color:#3B2820;font-family:system-ui,sans-serif;text-align:center}img{max-width:min(90vw,560px)}code{background:#fff8;padding:.2em .5em;border-radius:6px}</style></head>
-<body><main><img src="img/snailmail-logo-transparent.png" alt="SnailMail"><p>a cozy Java + Bedrock island town</p><p><code>play.snailmailmc.com</code></p></main></body></html>
+---
+layout: default
+title: SnailMail
+description: A cozy island town Minecraft server for Java and Bedrock. Catch bugs, fill the museum, live through real-time seasons and send letters to your neighbors.
+slug: home
+---
+<section class="hero">
+  <div class="hero-art">
+    <picture>
+      <source media="(max-width: 720px)" srcset="/assets/img/island-900.webp">
+      <img src="/assets/img/island-1672.webp" alt="A pastel pixel-art island town at sunset, with the SnailMail snail delivering a letter outside the post office" width="1672" height="941" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-card">
+      <p class="kicker">Java + Bedrock · Opening soon</p>
+      <h1>A cozy island town, delivered.</h1>
+      <p class="lead">Catch bugs, fill the museum, live through real-time seasons and send letters to your neighbors. SnailMail is a slow-living Minecraft server inspired by Animal Crossing and Tomodachi Life.</p>
+      {% include ip-card.html %}
+      <div class="hero-actions">
+        <a class="btn btn-discord" href="{{ site.discord }}" rel="noopener">Join the Discord</a>
+        <a class="btn btn-ghost" href="/join/">How to join</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="status-strip" aria-label="Server status">
+  <div class="wrap status-grid">
+    <div class="stat"><span class="stat-label">Server</span><span class="stat-value"><span class="dot" data-status-dot></span><span data-status-text>Checking</span></span></div>
+    <div class="stat"><span class="stat-label">Islanders online</span><span class="stat-value" data-players>–</span></div>
+    <div class="stat"><span class="stat-label">Season on the island</span><span class="stat-value" data-season>–</span></div>
+    <div class="stat"><span class="stat-label">Wave 1</span><span class="stat-value">Opening soon</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">Wave 1</p>
+        <h2>What's on the island</h2>
+        <p class="lead">Everything in the first wave, ready for move-in day.</p>
+      </div>
+      <a class="btn btn-ghost" href="/about/">More about the island</a>
+    </div>
+    <div class="features">
+      <a class="card feature" href="/about/#town"><span class="sprite t-lav" data-sprite="house"></span><h3>Island town</h3><p>Settle into a little seaside town and make it home with your neighbors.</p></a>
+      <a class="card feature" href="/about/#fishing"><span class="sprite t-mint" data-sprite="fish"></span><h3>Fishing</h3><p>Cast a line off the pier and see what's biting this season.</p></a>
+      <a class="card feature" href="/about/#bugs"><span class="sprite t-pink" data-sprite="bug"></span><h3>Bug catching</h3><p>Butterflies, beetles and rare finds that only show up at the right time.</p></a>
+      <a class="card feature" href="/about/#museum"><span class="sprite t-gold" data-sprite="museum"></span><h3>The museum</h3><p>Donate your catches and help fill every hall, together.</p></a>
+      <a class="card feature" href="/about/#seasons"><span class="sprite t-pink" data-sprite="leaf"></span><h3>Real-time seasons</h3><p>The island follows the real calendar, so spring on the island is spring for you too.</p></a>
+      <a class="card feature" href="/about/#post"><span class="sprite t-lav" data-sprite="letter"></span><h3>Post office</h3><p>Write letters, send gifts and leave little notes for friends.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">News board</p>
+        <h2>Fresh from the mailbag</h2>
+      </div>
+      <a class="btn btn-ghost" href="/news/">See all news</a>
+    </div>
+    {% if site.posts.size > 0 %}
+    <div class="posts">
+      {% for post in site.posts limit: 3 %}{% include postcard.html post=post %}{% endfor %}
+    </div>
+    {% else %}
+    <div class="card empty-mail"><img src="/assets/img/snail.webp" alt="" width="84" height="84"><p>No letters yet. The first news arrives with the opening.</p></div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker">The mail route</p>
+        <h2>The island grows in waves</h2>
+        <p class="lead">New things arrive one wave at a time, so every update feels like a delivery.</p>
+      </div>
+    </div>
+    {% include route.html %}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="card discord-band">
+      <div class="copy">
+        <p class="kicker" style="color:var(--gold)">Come say hi</p>
+        <h2>Hang out with us on Discord</h2>
+        <p>Whitelist requests, sneak peeks of the island, events and the people who make SnailMail feel like home.</p>
+        <p class="discord-count" data-discord-count hidden></p>
+        <a class="btn btn-gold" href="{{ site.discord }}" rel="noopener">Join discord.gg/snailmail</a>
+      </div>
+      <img src="/assets/img/island-900.webp" alt="" width="900" height="506" loading="lazy">
+    </div>
+  </div>
+</section>

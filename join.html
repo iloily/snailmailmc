@@ -1,0 +1,78 @@
+---
+layout: default
+title: How to join
+description: How to join SnailMail on Java or Bedrock, get whitelisted and fix common connection problems.
+permalink: /join/
+slug: join
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">How to join</p>
+    <h1>Hop on the boat</h1>
+    <p class="lead">SnailMail works on Java and Bedrock. Pick the one you play, and you'll be on the island in a few minutes.</p>
+    <div class="snail-stamp"><img src="/assets/img/snail.webp" alt="" width="150" height="150"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="narrow stack" data-edition-tabs>
+    <div class="ed-switch">
+      <h2 style="font-size:28px">I play on</h2>
+      <div class="tabs" role="tablist" aria-label="Edition">
+        <button role="tab" type="button" data-edition="java" aria-selected="true">Java</button>
+        <button role="tab" type="button" data-edition="bedrock" aria-selected="false">Bedrock</button>
+      </div>
+    </div>
+
+    <div class="stack" data-panel="java">
+      <div class="card step"><span class="step-n">1</span><h3>Get whitelisted</h3>
+        <p>SnailMail is whitelist only. Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and message a staff member with your <strong>Java username</strong> and that you play on Java.</p></div>
+      <div class="card step"><span class="step-n">2</span><h3>Open Minecraft Java Edition {{ site.mc.version }}</h3>
+        <p>Use the newest version of Minecraft. Then go to <span class="path"><span>Multiplayer</span><span>Add Server</span></span>.</p></div>
+      <div class="card step"><span class="step-n">3</span><h3>Add SnailMail</h3>
+        <p>Type any name you like, and use this address:</p>
+        <div class="ip-row"><code>{{ site.mc.ip }}</code><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy IP</button></div></div>
+      <div class="card step"><span class="step-n">4</span><h3>Join and say hi</h3>
+        <p>Click <strong>Done</strong>, then double-click SnailMail in your server list. Welcome to the island!</p></div>
+    </div>
+
+    <div class="stack" data-panel="bedrock" hidden>
+      <div class="card step"><span class="step-n">1</span><h3>Get whitelisted</h3>
+        <p>SnailMail is whitelist only. Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and message a staff member with your <strong>Bedrock gamertag</strong> and that you play on Bedrock.</p></div>
+      <div class="card step"><span class="step-n">2</span><h3>Open Minecraft</h3>
+        <p>Works on phones, tablets, Windows, Xbox, PlayStation and Switch. Go to <span class="path"><span>Play</span><span>Servers</span><span>Add Server</span></span>.</p></div>
+      <div class="card step"><span class="step-n">3</span><h3>Add SnailMail</h3>
+        <p>Type any name you like, then fill in both boxes. The port matters, so don't leave it on the default.</p>
+        <div class="ip-split"><div><p class="ip-label">Server address</p><code>{{ site.mc.ip }}</code></div><div><p class="ip-label">Port</p><code>{{ site.mc.bedrock_port }}</code></div></div>
+        <div class="ip-row"><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy address</button><button class="btn btn-ghost" type="button" data-copy="{{ site.mc.bedrock_port }}">Copy port</button></div></div>
+      <div class="card step"><span class="step-n">4</span><h3>Join and say hi</h3>
+        <p>Save it, then tap SnailMail to join. Your name shows up with a <span class="inline-code">.</span> in front in-game. That's normal: it's how the server tells Bedrock players apart.</p></div>
+      <div class="note note-warn"><strong>On Xbox, PlayStation or Switch?</strong><p>Consoles hide the Add Server button on the Servers tab. The usual way in is to add SnailMail from the phone or Windows app on the same Microsoft account, or ask in the Discord and we'll help.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="narrow stack">
+    <div><p class="kicker">Stuck?</p><h2>Fixes for common problems</h2></div>
+    <div class="faq-list">
+      <details class="card faq"><summary>"You are not whitelisted on this server"</summary><div><p>You haven't been added yet, or your name was typed differently. Message a staff member on Discord with your exact username or gamertag, including capital letters.</p></div></details>
+      <details class="card faq"><summary>"Outdated client" or "Outdated server"</summary><div><p>Java players need Minecraft {{ site.mc.version }}. Open the launcher, pick <strong>Latest release</strong>, and try again.</p></div></details>
+      <details class="card faq"><summary>Bedrock says "Unable to connect to world"</summary><div><p>Check the port is <span class="inline-code">{{ site.mc.bedrock_port }}</span>, not the default 19132. Then check the address has no spaces at the start or end.</p></div></details>
+      <details class="card faq"><summary>The server shows as offline</summary><div><p>Look at the status at the top of the <a href="/">home page</a>. If it says offline, we're probably restarting or updating, and the Discord will say so.</p></div></details>
+      <details class="card faq"><summary>Still stuck?</summary><div><p>Ask in the Discord's general chat with a screenshot of the error. Someone will help you out.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="narrow stack">
+    <div><p class="kicker">Your first day</p><h2>Settling in</h2></div>
+    <div class="two-col">
+      <div class="card tip"><h3>Read the rules</h3><p>They're short and friendly. <a href="/rules/">Read them here</a>.</p></div>
+      <div class="card tip"><h3>Say hello</h3><p>Introduce yourself in chat and on the Discord. Everyone was new once.</p></div>
+      <div class="card tip"><h3>Visit the post office</h3><p>Send your first letter to someone who helped you out.</p></div>
+      <div class="card tip"><h3>Grab a fishing rod</h3><p>Start filling the museum. Every catch counts.</p></div>
+    </div>
+  </div>
+</section>

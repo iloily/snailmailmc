@@ -1,0 +1,22 @@
+---
+layout: default
+title: News
+description: Updates, events and wave announcements from the SnailMail island.
+permalink: /news/
+slug: news
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">News board</p>
+    <h1>Fresh from the mailbag</h1>
+    <p class="lead">Updates, events and wave announcements from the island.</p>
+    <div class="snail-stamp"><img src="/assets/img/snail.webp" alt="" width="150" height="150"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="posts">
+      {% for post in site.posts %}{% include postcard.html post=post %}{% endfor %}
+    </div>
+  </div>
+</section>

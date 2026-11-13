@@ -1,0 +1,19 @@
+<div class="ip-card" data-edition-tabs>
+  <div class="tabs" role="tablist" aria-label="Edition">
+    <button role="tab" type="button" data-edition="java" aria-selected="true">Java</button>
+    <button role="tab" type="button" data-edition="bedrock" aria-selected="false">Bedrock</button>
+  </div>
+  <div class="ip-panel" data-panel="java">
+    <p class="ip-label">Address</p>
+    <div class="ip-row"><code>{{ site.mc.ip }}</code><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy IP</button></div>
+    <p class="ip-hint">PC, Mac and Linux · Minecraft {{ site.mc.version }}</p>
+  </div>
+  <div class="ip-panel" data-panel="bedrock" hidden>
+    <div class="ip-split">
+      <div><p class="ip-label">Address</p><code>{{ site.mc.ip }}</code></div>
+      <div><p class="ip-label">Port</p><code>{{ site.mc.bedrock_port }}</code></div>
+    </div>
+    <div class="ip-row"><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy address</button><button class="btn btn-ghost" type="button" data-copy="{{ site.mc.bedrock_port }}">Copy port</button></div>
+    <p class="ip-hint">Phone, tablet, Windows, Xbox, PlayStation, Switch</p>
+  </div>
+</div>
