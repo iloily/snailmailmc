@@ -1,0 +1,9 @@
+<div class="news">
+  {% for p in include.posts %}{% assign cat = p.category | default: "Update" %}
+  <a class="panel news-card" href="{{ p.url }}">
+    <span class="news-meta"><span class="badge{% if cat == 'Event' %} badge-event{% elsif cat == 'Wave' %} badge-wave{% endif %}">{{ cat | upcase }}</span><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time></span>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.description | default: p.excerpt | strip_html }}</p>
+  </a>
+  {% endfor %}
+</div>

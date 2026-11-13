@@ -1,5 +1,6 @@
-<section class="page-head">
-  <div class="wrap">
+<section class="band small">
+  <div class="wrap page-title">
+    {% if include.tag %}<span class="tag">{{ include.tag }}</span>{% endif %}
     <h1>{{ include.title }}</h1>
     <p class="lead">{{ include.lead }}</p>
   </div>

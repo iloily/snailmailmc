@@ -2,13 +2,18 @@
 layout: default
 ---
 {% assign cat = page.category | default: "Update" %}
-<article class="section">
-  <div class="narrow prose">
-    <a class="back" href="/news/">&larr; All news</a>
-    <p class="post-date">{{ cat }}, <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+<section class="band small">
+  <div class="narrow page-title">
+    <span class="tag">{{ cat }} · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
-    {% if page.image %}<img src="{{ page.image }}" alt="" width="900" height="506">{% endif %}
-    {{ content }}
   </div>
-</article>
+</section>
+<section class="section">
+  <div class="narrow">
+    <article class="panel post">
+      {{ content }}
+      <p><a class="small-link" href="/news/">Back to all news</a></p>
+    </article>
+  </div>
+</section>

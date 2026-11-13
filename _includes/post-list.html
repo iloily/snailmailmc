@@ -1,4 +1,0 @@
-{% assign rest = include.posts %}{% if rest.size > 0 %}
-<div class="post-list">
-  {% for p in rest %}<a href="{{ p.url }}"><span class="post-date">{{ p.date | date: "%B %-d, %Y" }}</span><strong>{{ p.title }}</strong></a>{% endfor %}
-</div>{% endif %}

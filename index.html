@@ -1,66 +1,92 @@
 ---
 layout: default
 title: SnailMail
-description: A cozy island town Minecraft server for Java and Bedrock. Catch bugs, fill the museum, live through real-time seasons and send letters to your neighbors.
+description: A cozy island town in Minecraft for Java and Bedrock. Fishing, bugs, a museum, real-time seasons and a post office. Animal Crossing meets Tomodachi Life.
 slug: home
 ---
-<section class="hero" aria-label="SnailMail">
-  <picture>
-    <source media="(max-width: 720px)" srcset="/assets/img/island-900.webp">
-    <img src="/assets/img/island-1672.webp" alt="A pastel island town at sunset. The SnailMail snail, in a mail carrier's cap, hands a letter over at the post office." width="1672" height="941" fetchpriority="high">
-  </picture>
-  <img class="hero-logo" src="/assets/img/logo.webp" alt="SnailMail" width="1100" height="344">
-  <div class="label">
-    <div class="stamp"><img src="/assets/img/snail.webp" alt="" width="64" height="64"></div>
-    <p class="label-to">Send yourself to</p>
-    <p class="label-address">{{ site.mc.ip }}</p>
-    <p class="label-port">On Bedrock, add port <strong>{{ site.mc.bedrock_port }}</strong></p>
-    <div class="label-actions">
-      <button class="btn btn-primary btn-sm" type="button" data-copy="{{ site.mc.ip }}">Copy address</button>
-      <button class="btn btn-quiet btn-sm" type="button" data-copy="{{ site.mc.bedrock_port }}">Copy port</button>
+<section class="band">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="tag">Free to play · Java &amp; Bedrock</span>
+      <h1>A cozy island town to call home.</h1>
+      <p class="lead">Catch fish and bugs, fill the museum, send letters to your neighbors and watch the real seasons change. Animal Crossing meets Tomodachi Life, in Minecraft.</p>
+      <div class="hero-cta">
+        <button class="ip-box" type="button" data-copy="{{ site.mc.ip }}" aria-label="Copy server address {{ site.mc.ip }}"><code>{{ site.mc.ip }}</code><span class="copy">COPY IP</span></button>
+        <a class="btn btn-navy" href="{{ site.discord }}" rel="noopener">Join the Discord</a>
+      </div>
+      <p class="hero-how">How to join on <a href="/join/">Java</a>, <a href="/join/">Bedrock</a> or <a href="/join/">console</a></p>
+      <div class="chips">
+        <span class="chip"><span class="dot" data-status-dot></span>Server <span data-status-text>checking</span></span>
+        <span class="chip">Opening soon</span>
+      </div>
+    </div>
+    <div class="polaroid">
+      <span class="tape"></span>
+      <div class="shot"><img src="/assets/img/logo-square.webp" alt="SnailMail logo" width="600" height="600"></div>
+      <span class="sticker">Wave 1 coming soon</span>
     </div>
   </div>
 </section>
 
-<div class="wrap intro-grid">
-  <div class="intro-copy">
-    <h1>A slow, cozy island town for Java and Bedrock</h1>
-    <p class="lead">Catch bugs, fill the museum, live through real-time seasons and write letters to your neighbors. It's Animal Crossing and Tomodachi Life, in Minecraft.</p>
-    <p class="status"><span class="dot" data-status-dot></span><span>The island is <strong data-status-text>checking</strong>. <strong data-players>–</strong> islanders are on, and it's <strong data-season>–</strong> there right now.</span></p>
+<section class="section">
+  <div class="narrow">
+    <div class="sec-head"><h2>Join in a minute</h2><p>Pick how you play. You'll be on the island in no time.</p></div>
+    {% include join-card.html %}
   </div>
-  <div class="intro-side">
-    <h3>Getting in</h3>
-    <p>SnailMail is whitelist only. Join the Discord, ask a staff member to add you, then follow the steps for your edition.</p>
-    <div class="row"><a class="btn btn-primary" href="{{ site.discord }}" rel="noopener">Join the Discord</a><a class="btn btn-quiet" href="/join/">How to join</a></div>
-  </div>
-</div>
+</section>
 
 <section class="section">
-  <div class="wrap stack">
-    <h2>On the island when it opens</h2>
-    <div class="features">
-      <div class="feature"><h3>The town</h3><p>A little seaside town to settle into and make home with your neighbors.</p></div>
-      <div class="feature"><h3>Fishing</h3><p>Cast a line off the pier and see what's biting this season.</p></div>
-      <div class="feature"><h3>Bug catching</h3><p>Butterflies, beetles and rare finds that only come out at the right time of year.</p></div>
-      <div class="feature"><h3>The museum</h3><p>Donate what you catch and help everyone fill every hall.</p></div>
-      <div class="feature"><h3>Real-time seasons</h3><p>The island follows the real calendar, so spring there is spring for you too.</p></div>
-      <div class="feature"><h3>The post office</h3><p>Write letters, send gifts and leave notes for friends, then check the news board.</p></div>
+  <div class="wrap">
+    <div class="sec-head"><h2>Your first day</h2><p>Four little things to do once you arrive.</p></div>
+    <div class="cards4">
+      <div class="panel mini"><span class="n">1</span><h3>Say hello</h3><p>Introduce yourself in chat and on the Discord.</p></div>
+      <div class="panel mini"><span class="n">2</span><h3>Pitch your tent</h3><p>Claim a plot in town. Your tent grows into a home over time.</p></div>
+      <div class="panel mini"><span class="n">3</span><h3>Grab a rod</h3><p>Fish off the pier and start filling the museum.</p></div>
+      <div class="panel mini"><span class="n">4</span><h3>Send a letter</h3><p>Visit the post office and write to a new neighbor.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="head-row"><h2>Latest news</h2><a href="/news/">All news</a></div>
-    {% for post in site.posts limit: 1 %}{% include postcard.html post=post %}{% endfor %}
-    {% assign rest = site.posts | slice: 1, 3 %}{% include post-list.html posts=rest %}
+    <div class="sec-head"><h2>What you can do</h2><p>Everything on the island when Wave 1 opens.</p></div>
+    <div class="bento">
+      <div class="panel feature wide"><div class="art a-pink"><span class="sprite" data-sprite="house"></span></div><div class="body"><h3>A real little town</h3><p>Shops along the main street, a plaza in the middle and cozy homes on every block. Start in a tent and grow it into a house with Shells.</p></div></div>
+      <div class="panel feature"><div class="art a-sky"><span class="sprite" data-sprite="fish"></span></div><div class="body"><h3>Fishing</h3><p>Cast off the pier and see what's biting this season.</p></div></div>
+      <div class="panel feature"><div class="art a-mint"><span class="sprite" data-sprite="bug"></span></div><div class="body"><h3>Bug catching</h3><p>Butterflies, beetles and rare finds that only show up at the right time.</p></div></div>
+      <div class="panel feature"><div class="art a-lav"><span class="sprite" data-sprite="museum"></span></div><div class="body"><h3>The museum</h3><p>Donate your catches and fill every hall together.</p></div></div>
+      <div class="panel feature"><div class="art a-peach"><span class="sprite" data-sprite="leaf"></span></div><div class="body"><h3>Real seasons</h3><p>The island follows the real calendar. Right now it's <strong data-season>autumn</strong>.</p></div></div>
+      <div class="panel feature wide"><div class="art a-gold"><span class="sprite" data-sprite="letter"></span></div><div class="body"><h3>Post office and news board</h3><p>Send letters and gifts to friends, even when they're offline, and keep up with what's happening around town.</p></div></div>
+      <div class="panel feature"><div class="art a-pink"><span class="sprite" data-sprite="shell"></span></div><div class="body"><h3>Earn Shells</h3><p>Sell what you catch and spend Shells on your home.</p></div></div>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="wrap stack">
-    <h2>The island grows in waves</h2>
+  <div class="wrap">
+    <div class="cozy">
+      <div class="row-head"><div><h2>Cozy by design</h2><p class="muted">A kind, calm place for everyone. Here's how we keep it that way.</p></div><a class="btn btn-white btn-sm" href="/rules/">Read the rules</a></div>
+      <div class="cozy-grid">
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3D355F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3>Be kind</h3><p>No bullying, hate or drama. Treat everyone like a neighbor.</p></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3D355F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Whitelist only</h3><p>Everyone on the island has said hi on the Discord first.</p></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3D355F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg></span><h3>No griefing</h3><p>Your home and your things stay yours.</p></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3D355F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M9 12l2 2 4-4"/></svg></span><h3>No pay to win</h3><p>Anything you can buy is cosmetic. Everyone plays on the same island.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Opening in waves</h2><p>The island grows over time. Each wave adds something new.</p></div>
     {% include route.html %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="row-head"><div><h2>What's new</h2></div><a class="small-link" href="/news/">All news</a></div>
+    {% assign latest = site.posts | slice: 0, 3 %}{% include news-cards.html posts=latest %}
   </div>
 </section>
 
@@ -68,10 +94,44 @@ slug: home
   <div class="wrap">
     <div class="discord">
       <div>
-        <h2>Come hang out on Discord</h2>
-        <p>It's where whitelist requests, sneak peeks of the island and event news happen first. <span class="discord-count" data-discord-count hidden></span></p>
+        <h2>Come hang out on the Discord</h2>
+        <p class="status" data-discord-count hidden></p>
+        <ul class="checks">
+          <li>Get whitelisted</li>
+          <li>Sneak peeks of the island</li>
+          <li>Opening day announcement</li>
+          <li>Events and giveaways</li>
+        </ul>
       </div>
-      <a class="btn btn-light" href="{{ site.discord }}" rel="noopener">Join discord.gg/snailmail</a>
+      <div class="discord-cta">
+        <img src="/assets/img/snail.webp" alt="" width="120" height="120" style="width:120px;border-radius:28px">
+        <a class="btn btn-navy" href="{{ site.discord }}" rel="noopener">Join the Discord</a>
+        <p>discord.gg/snailmail</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head"><h2>Questions</h2></div>
+    <div class="faq">
+      <details><summary>Is SnailMail free?</summary><p>Yes. Anything you can buy later is cosmetic only, so nobody gets ahead by paying.</p></details>
+      <details><summary>Which versions can join?</summary><p>Java {{ site.mc.version }}, and Bedrock on phones, tablets, Windows and consoles.</p></details>
+      <details><summary>How do I get whitelisted?</summary><p>Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and message a staff member with your username or gamertag.</p></details>
+      <details><summary>When does it open?</summary><p>Wave 1 is being built right now. The opening date goes out on the Discord first.</p></details>
+      <details><summary>Is it okay for younger players?</summary><p>Yes. The rules keep it friendly, with no NSFW and light swearing at most.</p></details>
+      <details><summary>Can I play with friends?</summary><p>Of course. Move in next door, send each other letters and fill the museum together.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="final">
+      <h2>See you on the island</h2>
+      <p>Copy the address, hop on, and say hi.</p>
+      <button class="ip-box" type="button" data-copy="{{ site.mc.ip }}" aria-label="Copy server address {{ site.mc.ip }}"><code>{{ site.mc.ip }}</code><span class="copy">COPY IP</span></button>
     </div>
   </div>
 </section>

@@ -5,47 +5,18 @@ description: How to join SnailMail on Java or Bedrock, get whitelisted and fix c
 permalink: /join/
 slug: join
 ---
-{% include page-head.html title="How to join" lead="SnailMail works on Java and Bedrock. Pick the one you play and you'll be on the island in a few minutes." %}
+{% include page-head.html tag="Java · Bedrock · Console" title="How to join" lead="SnailMail works on Java and Bedrock. Pick how you play and you'll be on the island in a few minutes." %}
 
 <section class="section">
-  <div class="narrow" data-edition-tabs>
-    <div class="edition-row">
-      <h2 style="font-size:26px">I play on</h2>
-      <div class="segmented" role="tablist" aria-label="Edition">
-        <button role="tab" type="button" data-edition="java" aria-selected="true">Java</button>
-        <button role="tab" type="button" data-edition="bedrock" aria-selected="false">Bedrock</button>
-      </div>
-    </div>
-
-    <ol class="steps" data-panel="java">
-      <li><h3>Get whitelisted</h3><p>SnailMail is whitelist only. Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and message a staff member with your Java username.</p></li>
-      <li><h3>Open Minecraft Java Edition {{ site.mc.version }}</h3><p>Use the newest version, then go to <span class="path">Multiplayer › Add Server</span>.</p></li>
-      <li><h3>Add SnailMail</h3><p>Type any name you like and paste this address.</p>
-        <div class="field"><div class="field-box"><small>Server address</small><code>{{ site.mc.ip }}</code></div><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy IP</button></div></li>
-      <li><h3>Join and say hi</h3><p>Click Done, then double-click SnailMail in your server list. Welcome to the island!</p></li>
-    </ol>
-
-    <div data-panel="bedrock" hidden>
-      <ol class="steps">
-        <li><h3>Get whitelisted</h3><p>SnailMail is whitelist only. Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and message a staff member with your Bedrock gamertag.</p></li>
-        <li><h3>Open Minecraft</h3><p>Works on phones, tablets, Windows, Xbox, PlayStation and Switch. Go to <span class="path">Play › Servers › Add Server</span>.</p></li>
-        <li><h3>Add SnailMail</h3><p>Type any name you like, then fill in both boxes. Don't leave the port on its default.</p>
-          <div class="field">
-            <div class="field-box"><small>Server address</small><code>{{ site.mc.ip }}</code></div>
-            <div class="field-box"><small>Port</small><code>{{ site.mc.bedrock_port }}</code></div>
-          </div>
-          <div class="field"><button class="btn btn-primary" type="button" data-copy="{{ site.mc.ip }}">Copy address</button><button class="btn btn-quiet" type="button" data-copy="{{ site.mc.bedrock_port }}">Copy port</button></div></li>
-        <li><h3>Join and say hi</h3><p>Save it, then tap SnailMail to join. Your name shows up with a dot in front in-game. That's normal: it's how the server tells Bedrock players apart.</p></li>
-      </ol>
-      <div class="note"><strong>On Xbox, PlayStation or Switch?</strong><p>Consoles hide the Add Server button. The easiest way in is to add SnailMail from the phone or Windows app on the same Microsoft account, or ask in the Discord and we'll help.</p></div>
-    </div>
+  <div class="narrow">
+    {% include join-card.html %}
   </div>
 </section>
 
 <section class="section">
-  <div class="narrow stack">
-    <h2>If something goes wrong</h2>
-    <div class="faq">
+  <div class="narrow">
+    <div class="sec-head"><h2>If something goes wrong</h2></div>
+    <div class="faq" style="grid-template-columns:1fr">
       <details><summary>"You are not whitelisted on this server"</summary><p>You haven't been added yet, or your name was typed differently. Message a staff member on Discord with your exact username or gamertag, capital letters included.</p></details>
       <details><summary>"Outdated client" or "Outdated server"</summary><p>Java players need Minecraft {{ site.mc.version }}. Open the launcher, pick Latest release, and try again.</p></details>
       <details><summary>Bedrock says "Unable to connect to world"</summary><p>Check the port is {{ site.mc.bedrock_port }}, not the default 19132, and that the address has no spaces at the start or end.</p></details>
@@ -56,13 +27,13 @@ slug: join
 </section>
 
 <section class="section">
-  <div class="narrow stack">
-    <h2>Your first day</h2>
-    <div class="tips">
-      <div><h3>Read the rules</h3><p>They're short and friendly. <a href="/rules/">Read them here</a>.</p></div>
-      <div><h3>Say hello</h3><p>Introduce yourself in chat and on the Discord.</p></div>
-      <div><h3>Visit the post office</h3><p>Send your first letter to someone who helped you out.</p></div>
-      <div><h3>Grab a fishing rod</h3><p>Start filling the museum. Every catch counts.</p></div>
+  <div class="wrap">
+    <div class="sec-head"><h2>Your first day</h2></div>
+    <div class="cards4">
+      <div class="panel mini"><span class="n">1</span><h3>Read the rules</h3><p>They're short and friendly. <a href="/rules/">Read them here</a>.</p></div>
+      <div class="panel mini"><span class="n">2</span><h3>Say hello</h3><p>Introduce yourself in chat and on the Discord.</p></div>
+      <div class="panel mini"><span class="n">3</span><h3>Grab a rod</h3><p>Fish off the pier and start filling the museum.</p></div>
+      <div class="panel mini"><span class="n">4</span><h3>Send a letter</h3><p>Write to someone who helped you out.</p></div>
     </div>
   </div>
 </section>

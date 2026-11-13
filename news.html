@@ -5,10 +5,9 @@ description: Updates, events and wave announcements from the SnailMail island.
 permalink: /news/
 slug: news
 ---
-{% include page-head.html title="SnailMail News" lead="Updates, events and wave announcements from the island." %}
+{% include page-head.html title="News" lead="Updates, events and wave announcements from the island." %}
 <section class="section">
   <div class="wrap">
-    {% for post in site.posts limit: 1 %}{% include postcard.html post=post %}{% endfor %}
-    {% assign rest = site.posts | slice: 1, 100 %}{% include post-list.html posts=rest %}
+    {% include news-cards.html posts=site.posts %}
   </div>
 </section>

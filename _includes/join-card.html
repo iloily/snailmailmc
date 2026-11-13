@@ -1,0 +1,31 @@
+<div class="panel join-card" data-edition-tabs>
+  <div class="tabs" role="tablist" aria-label="Edition">
+    <button role="tab" type="button" data-edition="java" aria-selected="true">Java<small>PC and Mac</small></button>
+    <button role="tab" type="button" data-edition="bedrock" aria-selected="false">Bedrock<small>Phone and Windows</small></button>
+    <button role="tab" type="button" data-edition="console" aria-selected="false">Console<small>Xbox, PS, Switch</small></button>
+  </div>
+  <div class="join-body" data-panel="java">
+    <ol class="steps">
+      <li><span><strong>Get whitelisted.</strong> Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and send a staff member your Java username.</span></li>
+      <li><span><strong>Open Minecraft Java {{ site.mc.version }}</strong> and go to Multiplayer, then Add Server.</span></li>
+      <li><span><strong>Paste the address</strong>, give it any name, and join.</span>
+        <span><button class="addr" type="button" data-copy="{{ site.mc.ip }}"><span><small>SERVER ADDRESS</small><code>{{ site.mc.ip }}</code></span><span class="copy">COPY</span></button></span></li>
+    </ol>
+  </div>
+  <div class="join-body" data-panel="bedrock" hidden>
+    <ol class="steps">
+      <li><span><strong>Get whitelisted.</strong> Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and send a staff member your gamertag.</span></li>
+      <li><span><strong>Open Minecraft</strong> and go to Play, then Servers, then Add Server.</span></li>
+      <li><span><strong>Fill in both boxes.</strong> The port isn't the default one, so change it.</span>
+        <span class="addrs"><button class="addr" type="button" data-copy="{{ site.mc.ip }}"><span><small>SERVER ADDRESS</small><code>{{ site.mc.ip }}</code></span><span class="copy">COPY</span></button><button class="addr" type="button" data-copy="{{ site.mc.bedrock_port }}"><span><small>PORT</small><code>{{ site.mc.bedrock_port }}</code></span><span class="copy">COPY</span></button></span></li>
+    </ol>
+  </div>
+  <div class="join-body" data-panel="console" hidden>
+    <ol class="steps">
+      <li><span><strong>Get whitelisted.</strong> Join the <a href="{{ site.discord }}" rel="noopener">Discord</a> and send a staff member your gamertag.</span></li>
+      <li><span><strong>Add SnailMail from a phone or Windows PC</strong> signed in to the same Microsoft account, using the Bedrock steps. Consoles hide the Add Server button, so this is the easy way in.</span></li>
+      <li><span><strong>Turn on your console</strong> and SnailMail shows up in your server list. Stuck? Ask in the Discord and we'll help.</span></li>
+    </ol>
+  </div>
+  <div class="join-body join-foot">Playing on Bedrock? Your name shows with a dot in front in-game. That's normal. <a href="/join/">Full guide and fixes</a></div>
+</div>
