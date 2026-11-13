@@ -16,6 +16,10 @@ The custom Paper plugin for the SnailMail server: mail, Shells (currency), fishi
 | `/mail` (`/mailbox`) | Open your mailbox: a chest menu on Java, a form on Bedrock |
 | `/mail send <player> <letter>` | Post a letter. It arrives the next morning at 6 AM town time |
 | `/mail gift <player> [note]` | Post the item in your hand, with an optional note |
+| `/news` (`/board`) | Open the town news board: chest menu on Java, form on Bedrock |
+| `/news post <title> \| <text>` | Post news and tell everyone online (`snailmail.news`) |
+| `/news remove <id>` | Take a post down (`snailmail.news`) |
+| `/news bind` / `/news unbind` | Make the block you're looking at open the news board when right-clicked (`snailmail.news`) |
 | `/snailmail reload` | Reload the config (admin) |
 
 Shells are whole numbers and are registered with Vault, so other plugins can use them. Data lives in `plugins/SnailMail/snailmail.db` (SQLite).

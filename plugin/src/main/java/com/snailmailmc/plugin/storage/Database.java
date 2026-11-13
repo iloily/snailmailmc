@@ -38,6 +38,22 @@ public final class Database implements AutoCloseable {
                         notified INTEGER NOT NULL DEFAULT 0
                     )""");
             st.execute("CREATE INDEX IF NOT EXISTS letters_recipient ON letters (recipient, deliver_at)");
+            st.execute("""
+                    CREATE TABLE IF NOT EXISTS news (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        title TEXT NOT NULL,
+                        body TEXT NOT NULL,
+                        author TEXT NOT NULL,
+                        posted_at INTEGER NOT NULL
+                    )""");
+            st.execute("""
+                    CREATE TABLE IF NOT EXISTS news_boards (
+                        world TEXT NOT NULL,
+                        x INTEGER NOT NULL,
+                        y INTEGER NOT NULL,
+                        z INTEGER NOT NULL,
+                        PRIMARY KEY (world, x, y, z)
+                    )""");
         }
     }
 

@@ -7,6 +7,8 @@ import com.snailmailmc.plugin.mail.MailCommand;
 import com.snailmailmc.plugin.mail.MailNotifier;
 import com.snailmailmc.plugin.mail.MailService;
 import com.snailmailmc.plugin.mail.MailStore;
+import com.snailmailmc.plugin.news.NewsBoard;
+import com.snailmailmc.plugin.news.NewsStore;
 import com.snailmailmc.plugin.platform.Platforms;
 import com.snailmailmc.plugin.shells.ShellsCommand;
 import com.snailmailmc.plugin.shells.ShellsFormat;
@@ -65,7 +67,11 @@ public final class SnailMailPlugin extends JavaPlugin implements Listener {
         register("mail", new MailCommand(this, mail, javaMailbox,
                 platforms.floodgateAvailable() ? new BedrockMailbox(this, mail) : null));
 
+        NewsBoard news = new NewsBoard(this, new NewsStore(database));
+        register("news", news);
+
         getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(news, this);
         getServer().getPluginManager().registerEvents(javaMailbox, this);
         getServer().getPluginManager().registerEvents(notifier, this);
         notifier.start();
